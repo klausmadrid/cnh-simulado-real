@@ -1,0 +1,9 @@
+{
+  "name": "CNH Simulado Real",
+  "short_name": "CNH Simulado",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#22c55e",
+  "icons": []
+}

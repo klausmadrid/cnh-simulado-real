@@ -1,0 +1,144 @@
+{
+  "questions": [
+    {
+      "id": "leg-001",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "Segundo o CTB, quem tem prioridade de passagem nas faixas de travessia sem semáforo?",
+      "options": [
+        "Veículos motorizados, se em velocidade compatível",
+        "Pedestres já posicionados na faixa",
+        "Ciclistas em calçadas",
+        "Motocicletas"
+      ],
+      "answerIndex": 1,
+      "explain": "Pedestres na faixa têm prioridade (normas de circulação e conduta)."
+    },
+    {
+      "id": "leg-002",
+      "module": "leg",
+      "difficulty": 2,
+      "stem": "Estacionar em local sinalizado com linha amarela contínua no meio-fio caracteriza:",
+      "options": [
+        "Infração leve",
+        "Infração média",
+        "Infração grave",
+        "Infração gravíssima"
+      ],
+      "answerIndex": 2,
+      "explain": "Regra geral: linha amarela contínua indica proibição de estacionar (infração grave), salvo sinalização complementar."
+    },
+    {
+      "id": "dd-001",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Em direção defensiva, a 'distância de seguimento' serve principalmente para:",
+      "options": [
+        "Melhorar a aerodinâmica do veículo",
+        "Aumentar o campo de visão do retrovisor",
+        "Permitir reação segura a frenagens do veículo à frente",
+        "Economizar combustível"
+      ],
+      "answerIndex": 2,
+      "explain": "A distância adequada cria tempo e espaço para reagir a imprevistos."
+    },
+    {
+      "id": "dd-002",
+      "module": "dd",
+      "difficulty": 2,
+      "stem": "Ao enfrentar chuva intensa e início de aquaplanagem, a ação mais indicada é:",
+      "options": [
+        "Frenagem brusca e giro do volante",
+        "Soltar o acelerador, manter volante alinhado e não frear forte",
+        "Acelerar para retomar aderência",
+        "Acionar freio de estacionamento"
+      ],
+      "answerIndex": 1,
+      "explain": "Reduza gradualmente, mantenha direção reta até recuperar contato com o solo."
+    },
+    {
+      "id": "ps-001",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Em um acidente, a primeira conduta é:",
+      "options": [
+        "Remover a vítima rapidamente do veículo",
+        "Sinalizar o local para evitar novos acidentes",
+        "Oferecer água para acalmar a vítima",
+        "Aplicar qualquer técnica de reanimação"
+      ],
+      "answerIndex": 1,
+      "explain": "A sinalização do local previne agravar a ocorrência; acione os serviços de emergência."
+    },
+    {
+      "id": "ma-001",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Qual conduta contribui para reduzir emissões no trânsito urbano?",
+      "options": [
+        "Circular com pneus murchos",
+        "Manter revisões em dia e calibragem correta",
+        "Retirar o catalisador",
+        "Acelerações/desacelerações bruscas frequentes"
+      ],
+      "answerIndex": 1,
+      "explain": "Manutenção e condução econômica reduzem consumo e emissões."
+    },
+    {
+      "id": "nv-001",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "A luz indicadora de freio acende ao:",
+      "options": [
+        "Acionar pisca-alerta",
+        "Acionar o pedal de freio",
+        "Engatar a ré",
+        "Acender farol baixo"
+      ],
+      "answerIndex": 1,
+      "explain": "Acende com o pedal de freio; avisa aos veículos de trás sobre a frenagem."
+    },
+    {
+      "id": "leg-003",
+      "module": "leg",
+      "difficulty": 2,
+      "stem": "Dirigir sob influência de álcool acima do limite legal configura:",
+      "options": [
+        "Infração leve",
+        "Infração média",
+        "Infração gravíssima e crime em determinadas condições",
+        "Apenas crime, sem infração administrativa"
+      ],
+      "answerIndex": 2,
+      "explain": "É infração gravíssima; pode configurar crime de trânsito conforme parâmetros legais."
+    },
+    {
+      "id": "dd-003",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "O 'ponto cego' de um veículo é:",
+      "options": [
+        "Área que as câmeras não filmam",
+        "Área não visualizada pelos espelhos sem ajuste de cabeça",
+        "Área mais iluminada do farol",
+        "Área do painel sem iluminação"
+      ],
+      "answerIndex": 1,
+      "explain": "Exige verificação com movimento de cabeça e correta regulagem de espelhos."
+    },
+    {
+      "id": "ps-002",
+      "module": "ps",
+      "difficulty": 2,
+      "stem": "Em caso de vítima com sangramento intenso, a conduta indicada é:",
+      "options": [
+        "Aplicar torniquete sem avaliação",
+        "Aplicar pressão direta no local com pano limpo e acionar emergência",
+        "Oferecer bebidas para repor líquidos",
+        "Retirar objetos cravados imediatamente"
+      ],
+      "answerIndex": 1,
+      "explain": "Pressão direta ajuda a controlar o sangramento; torniquete é medida específica e deve ser bem indicada."
+    }
+  ]
+}
