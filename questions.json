@@ -4,141 +4,841 @@
       "id": "leg-001",
       "module": "leg",
       "difficulty": 1,
-      "stem": "Segundo o CTB, quem tem prioridade de passagem nas faixas de travessia sem semáforo?",
+      "stem": "Segundo o CTB, quem tem prioridade de passagem na faixa de travessia sem semáforo?",
       "options": [
-        "Veículos motorizados, se em velocidade compatível",
+        "Veículos motorizados em velocidade compatível",
         "Pedestres já posicionados na faixa",
-        "Ciclistas em calçadas",
+        "Ciclistas na calçada",
         "Motocicletas"
       ],
       "answerIndex": 1,
-      "explain": "Pedestres na faixa têm prioridade (normas de circulação e conduta)."
+      "explain": "Pedestres na faixa têm prioridade de passagem."
     },
     {
       "id": "leg-002",
       "module": "leg",
-      "difficulty": 2,
-      "stem": "Estacionar em local sinalizado com linha amarela contínua no meio-fio caracteriza:",
+      "difficulty": 1,
+      "stem": "Parar/estacionar em frente a hidrante devidamente sinalizado caracteriza:",
       "options": [
-        "Infração leve",
         "Infração média",
         "Infração grave",
+        "Infração gravíssima",
+        "Apenas irregularidade"
+      ],
+      "answerIndex": 1,
+      "explain": "Estacionar onde há proibição é infração grave, com remoção."
+    },
+    {
+      "id": "leg-003",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "Dirigir sob influência de álcool acima do limite legal é:",
+      "options": [
+        "Apenas crime",
+        "Apenas infração administrativa",
+        "Infração gravíssima e pode configurar crime",
+        "Conduta atípica"
+      ],
+      "answerIndex": 2,
+      "explain": "É infração gravíssima; pode configurar crime conforme dosagem e situação."
+    },
+    {
+      "id": "leg-004",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "Qual documento comprova o licenciamento anual do veículo?",
+      "options": [
+        "CRV",
+        "CNH",
+        "CRLV",
+        "Certidão municipal"
+      ],
+      "answerIndex": 2,
+      "explain": "O CRLV comprova o licenciamento do veículo."
+    },
+    {
+      "id": "leg-005",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "A conversão à direita onde há placa de Proibido Estacionar é:",
+      "options": [
+        "Proibida",
+        "Permitida se não houver outra restrição",
+        "Permitida apenas à noite",
+        "Sempre proibida"
+      ],
+      "answerIndex": 1,
+      "explain": "Placa de Proibido Estacionar não proíbe conversão; observe outras sinalizações."
+    },
+    {
+      "id": "leg-006",
+      "module": "leg",
+      "difficulty": 2,
+      "stem": "Em vias urbanas, a velocidade máxima padrão em via arterial, na ausência de sinalização, é tipicamente:",
+      "options": [
+        "20 km/h",
+        "40 km/h",
+        "60 km/h",
+        "100 km/h"
+      ],
+      "answerIndex": 2,
+      "explain": "Na ausência de sinalização, a regra geral é 60 km/h para vias arteriais."
+    },
+    {
+      "id": "leg-007",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "O uso do cinto de segurança é:",
+      "options": [
+        "Obrigatório apenas no banco dianteiro",
+        "Obrigatório em todos os assentos com cintos instalados",
+        "Opcional em vias locais",
+        "Obrigatório apenas em rodovias"
+      ],
+      "answerIndex": 1,
+      "explain": "É obrigatório para todos os ocupantes, quando houver cinto."
+    },
+    {
+      "id": "leg-008",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "Fone de ouvido em ambos os ouvidos durante a condução:",
+      "options": [
+        "É permitido",
+        "É proibido",
+        "É obrigatório para motociclistas",
+        "Não é regulado"
+      ],
+      "answerIndex": 1,
+      "explain": "Dispositivos que comprometem a atenção/isolam sons externos são proibidos."
+    },
+    {
+      "id": "leg-009",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "Criança de 9 anos deve ser transportada:",
+      "options": [
+        "No banco dianteiro, sem cinto",
+        "No banco traseiro, com cinto adequado",
+        "Em pé, segurando no banco",
+        "No colo com cinto compartilhado"
+      ],
+      "answerIndex": 1,
+      "explain": "Deve usar o dispositivo/cinto adequado ao porte, preferencialmente no banco traseiro."
+    },
+    {
+      "id": "leg-010",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "Avançar o sinal vermelho intencionalmente é:",
+      "options": [
+        "Infração média",
+        "Infração grave",
+        "Infração gravíssima",
+        "Sem previsão"
+      ],
+      "answerIndex": 2,
+      "explain": "É infração gravíssima, com penalidade específica."
+    },
+    {
+      "id": "leg-011",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "Dirigir com CNH vencida há mais de 30 dias é:",
+      "options": [
+        "Permitido",
+        "Infração leve",
+        "Infração média",
         "Infração gravíssima"
       ],
       "answerIndex": 2,
-      "explain": "Regra geral: linha amarela contínua indica proibição de estacionar (infração grave), salvo sinalização complementar."
+      "explain": "Dirigir com CNH vencida há mais de 30 dias configura infração de trânsito."
+    },
+    {
+      "id": "leg-012",
+      "module": "leg",
+      "difficulty": 1,
+      "stem": "O uso do farol baixo durante o dia é obrigatório:",
+      "options": [
+        "Apenas em túneis e sob chuva/neblina",
+        "Nunca",
+        "Em qualquer via",
+        "Somente em rodovias"
+      ],
+      "answerIndex": 0,
+      "explain": "Em condições como túneis, chuva, neblina e situações recomendadas, o farol baixo deve ser usado."
     },
     {
       "id": "dd-001",
       "module": "dd",
       "difficulty": 1,
-      "stem": "Em direção defensiva, a 'distância de seguimento' serve principalmente para:",
+      "stem": "A distância de seguimento serve para:",
       "options": [
-        "Melhorar a aerodinâmica do veículo",
-        "Aumentar o campo de visão do retrovisor",
+        "Economizar combustível",
         "Permitir reação segura a frenagens do veículo à frente",
-        "Economizar combustível"
+        "Melhorar aerodinâmica",
+        "Evitar multas"
       ],
-      "answerIndex": 2,
-      "explain": "A distância adequada cria tempo e espaço para reagir a imprevistos."
+      "answerIndex": 1,
+      "explain": "Garante tempo e espaço para reagir a imprevistos."
     },
     {
       "id": "dd-002",
       "module": "dd",
-      "difficulty": 2,
-      "stem": "Ao enfrentar chuva intensa e início de aquaplanagem, a ação mais indicada é:",
+      "difficulty": 1,
+      "stem": "Em aquaplanagem, a melhor conduta é:",
       "options": [
-        "Frenagem brusca e giro do volante",
-        "Soltar o acelerador, manter volante alinhado e não frear forte",
+        "Frenar forte e virar o volante",
+        "Soltar o acelerador e manter volante alinhado",
         "Acelerar para retomar aderência",
         "Acionar freio de estacionamento"
       ],
       "answerIndex": 1,
-      "explain": "Reduza gradualmente, mantenha direção reta até recuperar contato com o solo."
-    },
-    {
-      "id": "ps-001",
-      "module": "ps",
-      "difficulty": 1,
-      "stem": "Em um acidente, a primeira conduta é:",
-      "options": [
-        "Remover a vítima rapidamente do veículo",
-        "Sinalizar o local para evitar novos acidentes",
-        "Oferecer água para acalmar a vítima",
-        "Aplicar qualquer técnica de reanimação"
-      ],
-      "answerIndex": 1,
-      "explain": "A sinalização do local previne agravar a ocorrência; acione os serviços de emergência."
-    },
-    {
-      "id": "ma-001",
-      "module": "ma",
-      "difficulty": 1,
-      "stem": "Qual conduta contribui para reduzir emissões no trânsito urbano?",
-      "options": [
-        "Circular com pneus murchos",
-        "Manter revisões em dia e calibragem correta",
-        "Retirar o catalisador",
-        "Acelerações/desacelerações bruscas frequentes"
-      ],
-      "answerIndex": 1,
-      "explain": "Manutenção e condução econômica reduzem consumo e emissões."
-    },
-    {
-      "id": "nv-001",
-      "module": "nv",
-      "difficulty": 1,
-      "stem": "A luz indicadora de freio acende ao:",
-      "options": [
-        "Acionar pisca-alerta",
-        "Acionar o pedal de freio",
-        "Engatar a ré",
-        "Acender farol baixo"
-      ],
-      "answerIndex": 1,
-      "explain": "Acende com o pedal de freio; avisa aos veículos de trás sobre a frenagem."
-    },
-    {
-      "id": "leg-003",
-      "module": "leg",
-      "difficulty": 2,
-      "stem": "Dirigir sob influência de álcool acima do limite legal configura:",
-      "options": [
-        "Infração leve",
-        "Infração média",
-        "Infração gravíssima e crime em determinadas condições",
-        "Apenas crime, sem infração administrativa"
-      ],
-      "answerIndex": 2,
-      "explain": "É infração gravíssima; pode configurar crime de trânsito conforme parâmetros legais."
+      "explain": "Reduza gradualmente e mantenha a direção reta até recuperar contato."
     },
     {
       "id": "dd-003",
       "module": "dd",
       "difficulty": 1,
-      "stem": "O 'ponto cego' de um veículo é:",
+      "stem": "Antecipar riscos observando 360° e pontos cegos é prática de:",
       "options": [
-        "Área que as câmeras não filmam",
-        "Área não visualizada pelos espelhos sem ajuste de cabeça",
-        "Área mais iluminada do farol",
-        "Área do painel sem iluminação"
+        "Direção esportiva",
+        "Direção defensiva",
+        "Inspeção veicular",
+        "Condução autônoma"
       ],
       "answerIndex": 1,
-      "explain": "Exige verificação com movimento de cabeça e correta regulagem de espelhos."
+      "explain": "Direção defensiva antecipa perigos e evita acidentes."
+    },
+    {
+      "id": "dd-004",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Em ponte estreita com veículo pesado vindo no sentido oposto:",
+      "options": [
+        "Dispute a passagem",
+        "Pare no meio da ponte",
+        "Reduza e aguarde em local seguro",
+        "Acelere para passar antes"
+      ],
+      "answerIndex": 2,
+      "explain": "Ceda passagem e aguarde em segurança quando a largura for insuficiente."
+    },
+    {
+      "id": "dd-005",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Em rodovia com neblina forte, você deve:",
+      "options": [
+        "Ligar farol alto",
+        "Usar farol baixo e reduzir velocidade",
+        "Trafegar pelo acostamento",
+        "Dirigir colado no veículo à frente"
+      ],
+      "answerIndex": 1,
+      "explain": "Farol baixo/neblineiro e velocidade compatível aumentam segurança."
+    },
+    {
+      "id": "dd-006",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Ao perceber falha nos freios em descida:",
+      "options": [
+        "Desligar o motor",
+        "Bombeie o pedal e reduza marchas",
+        "Puxar freio de estacionamento bruscamente",
+        "Acelerar para sair da ladeira"
+      ],
+      "answerIndex": 1,
+      "explain": "Reduza com freio-motor e tente recuperar pressão no sistema."
+    },
+    {
+      "id": "dd-007",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Pneus carecas aumentam:",
+      "options": [
+        "Aderência",
+        "Consumo de combustível",
+        "Risco de aquaplanagem",
+        "Estabilidade lateral"
+      ],
+      "answerIndex": 2,
+      "explain": "Menor sulco = menor escoamento de água = mais aquaplanagem."
+    },
+    {
+      "id": "dd-008",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Em faixa de pedestres com pessoas aguardando para atravessar:",
+      "options": [
+        "Mantenha a velocidade",
+        "Acelere para liberar a via",
+        "Reduza e pare, sinalizando a travessia",
+        "Toque a buzina"
+      ],
+      "answerIndex": 2,
+      "explain": "Priorize a travessia segura dos pedestres."
+    },
+    {
+      "id": "dd-009",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Regulagem dos espelhos retrovisores correta:",
+      "options": [
+        "Mostrar grande parte da lateral do próprio carro",
+        "Reduzir pontos cegos e ampliar campo lateral",
+        "Apontar para baixo",
+        "É irrelevante"
+      ],
+      "answerIndex": 1,
+      "explain": "Objetivo é minimizar pontos cegos."
+    },
+    {
+      "id": "dd-010",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Condução econômica inclui:",
+      "options": [
+        "Acelerações bruscas",
+        "Pneus murchos",
+        "Trocas de marcha em rotações adequadas",
+        "Circular com peso extra"
+      ],
+      "answerIndex": 2,
+      "explain": "Mudanças suaves e manutenção adequada reduzem consumo."
+    },
+    {
+      "id": "dd-011",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Uso correto da buzina em área urbana:",
+      "options": [
+        "Avisos em situação de risco imediato",
+        "Chamar pedestre distraído distante",
+        "Saudar amigos",
+        "Impor passagem"
+      ],
+      "answerIndex": 0,
+      "explain": "Buzina é sinal sonoro para evitar perigo."
+    },
+    {
+      "id": "dd-012",
+      "module": "dd",
+      "difficulty": 1,
+      "stem": "Ao ser ultrapassado em pista simples:",
+      "options": [
+        "Aproxime-se do centro",
+        "Acelere para dificultar",
+        "Mantenha velocidade e lateral seguro",
+        "Feche a passagem"
+      ],
+      "answerIndex": 2,
+      "explain": "Comportamento previsível e seguro facilita a manobra alheia."
+    },
+    {
+      "id": "ps-001",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Primeira ação ao chegar em um acidente:",
+      "options": [
+        "Remover vítima",
+        "Sinalizar o local e acionar socorro",
+        "Oferecer água",
+        "Aplicar medicação"
+      ],
+      "answerIndex": 1,
+      "explain": "Sinalize para evitar novos acidentes e chame ajuda."
     },
     {
       "id": "ps-002",
       "module": "ps",
-      "difficulty": 2,
-      "stem": "Em caso de vítima com sangramento intenso, a conduta indicada é:",
+      "difficulty": 1,
+      "stem": "Vítima com sangramento intenso:",
       "options": [
-        "Aplicar torniquete sem avaliação",
-        "Aplicar pressão direta no local com pano limpo e acionar emergência",
-        "Oferecer bebidas para repor líquidos",
-        "Retirar objetos cravados imediatamente"
+        "Aplicar pressão direta no local",
+        "Aplicar torniquete de imediato",
+        "Dar líquidos",
+        "Retirar objetos cravados"
+      ],
+      "answerIndex": 0,
+      "explain": "Pressão direta controla hemorragia; torniquete exige indicação específica."
+    },
+    {
+      "id": "ps-003",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Suspeita de fratura de coluna:",
+      "options": [
+        "Sentar a vítima para conforto",
+        "Movimentar para a calçada",
+        "Evitar mover e estabilizar cabeça/pescoço",
+        "Aplicar bolsas de água quente"
+      ],
+      "answerIndex": 2,
+      "explain": "Evite movimentos; estabilize até chegada de socorro."
+    },
+    {
+      "id": "ps-004",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Vítima inconsciente respirando:",
+      "options": [
+        "Colocar em posição lateral de segurança",
+        "Dar água",
+        "Ressuscitação imediatamente",
+        "Sentá-la"
+      ],
+      "answerIndex": 0,
+      "explain": "A posição lateral mantém vias aéreas desobstruídas."
+    },
+    {
+      "id": "ps-005",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Queimadura recente:",
+      "options": [
+        "Aplicar pasta/óleo",
+        "Água corrente por alguns minutos",
+        "Retirar roupas coladas à pele",
+        "Estourar bolhas"
       ],
       "answerIndex": 1,
-      "explain": "Pressão direta ajuda a controlar o sangramento; torniquete é medida específica e deve ser bem indicada."
+      "explain": "Resfriar a área com água corrente ajuda; não use substâncias caseiras."
+    },
+    {
+      "id": "ps-006",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Crise convulsiva no trânsito:",
+      "options": [
+        "Segurar a língua",
+        "Restringir os braços",
+        "Afaste objetos e proteja a cabeça",
+        "Dar líquidos açucarados"
+      ],
+      "answerIndex": 2,
+      "explain": "Evite contenção; proteja e aguarde cessar para avaliar."
+    },
+    {
+      "id": "ps-007",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Corpo estranho nos olhos:",
+      "options": [
+        "Esfregar bastante",
+        "Lavar com água corrente",
+        "Usar cotonete",
+        "Forçar pálpebras"
+      ],
+      "answerIndex": 1,
+      "explain": "A irrigação com água ajuda a remover partículas."
+    },
+    {
+      "id": "ps-008",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Hemorragia nasal (epistaxe):",
+      "options": [
+        "Deitar a cabeça para trás",
+        "Comprimir narinas e inclinar levemente a cabeça para frente",
+        "Tampar boca e nariz",
+        "Assoar com força"
+      ],
+      "answerIndex": 1,
+      "explain": "Compressão e ligeira inclinação anterior reduzem sangramento."
+    },
+    {
+      "id": "ps-009",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Vítima com suspeita de choque elétrico ainda em contato:",
+      "options": [
+        "Puxar a vítima",
+        "Tocar com mãos molhadas",
+        "Desligar a fonte/eliminar o contato com isolante",
+        "Jogar água"
+      ],
+      "answerIndex": 2,
+      "explain": "Primeiro interrompa a fonte de energia com segurança."
+    },
+    {
+      "id": "ps-010",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Parada cardiorrespiratória provável:",
+      "options": [
+        "Checar responsividade e respiração e iniciar compressões",
+        "Esperar ambulância sem agir",
+        "Dar água",
+        "Levantar as pernas"
+      ],
+      "answerIndex": 0,
+      "explain": "Inicie RCP conforme treinamento, após checagem rápida."
+    },
+    {
+      "id": "ps-011",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Glasgow/nível de consciência para leigos:",
+      "options": [
+        "Avaliação complexa para profissionais",
+        "Verificar resposta a comandos simples e estímulos",
+        "Não se avalia no local",
+        "Usar apenas aparelho"
+      ],
+      "answerIndex": 1,
+      "explain": "Para leigos, observe responsividade e chame socorro."
+    },
+    {
+      "id": "ps-012",
+      "module": "ps",
+      "difficulty": 1,
+      "stem": "Retirada de capacete de motociclista:",
+      "options": [
+        "Remover imediatamente",
+        "Nunca remover em hipótese alguma",
+        "Evitar remover; só com técnica e necessidade",
+        "Remover para facilitar conversa"
+      ],
+      "answerIndex": 2,
+      "explain": "Evite retirar sem técnica; risco de lesão cervical."
+    },
+    {
+      "id": "ma-001",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Dirigir de forma econômica reduz:",
+      "options": [
+        "Emissões e consumo",
+        "A segurança",
+        "Vida útil dos pneus",
+        "Concentração"
+      ],
+      "answerIndex": 0,
+      "explain": "Condução suave e manutenção diminuem consumo e emissões."
+    },
+    {
+      "id": "ma-002",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Descarte de óleo lubrificante usado:",
+      "options": [
+        "Ralo comum",
+        "Solo",
+        "Ponto de coleta autorizado",
+        "Qualquer lixeira"
+      ],
+      "answerIndex": 2,
+      "explain": "Óleo deve ir a pontos de coleta para reciclagem adequada."
+    },
+    {
+      "id": "ma-003",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Pneus calibrados corretamente:",
+      "options": [
+        "Aumentam consumo",
+        "Reduzem emissões e melhoram segurança",
+        "Não têm efeito",
+        "Só servem para conforto"
+      ],
+      "answerIndex": 1,
+      "explain": "Calibragem correta melhora eficiência e segurança."
+    },
+    {
+      "id": "ma-004",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Catalisador no sistema de escapamento serve para:",
+      "options": [
+        "Aumentar ruído",
+        "Reduzir poluentes",
+        "Aumentar potência",
+        "Resfriar motor"
+      ],
+      "answerIndex": 1,
+      "explain": "Converte gases nocivos em menos poluentes."
+    },
+    {
+      "id": "ma-005",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Veículo soltando fumaça azul indica possível:",
+      "options": [
+        "Queima de óleo",
+        "Excesso de ar nos pneus",
+        "Falha no alternador",
+        "Combustível adulterado"
+      ],
+      "answerIndex": 0,
+      "explain": "Fumaça azul geralmente sugere queima de óleo."
+    },
+    {
+      "id": "ma-006",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Manter velocidade constante em vias rápidas:",
+      "options": [
+        "Aumenta consumo",
+        "Reduz consumo e estresse mecânico",
+        "É proibido",
+        "Não tem relação"
+      ],
+      "answerIndex": 1,
+      "explain": "Velocidade estável ajuda na eficiência energética."
+    },
+    {
+      "id": "ma-007",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Carona solidária e transporte coletivo:",
+      "options": [
+        "Aumentam congestionamento",
+        "Reduzem veículos na via e emissões",
+        "Não impactam nada",
+        "Pioram a mobilidade"
+      ],
+      "answerIndex": 1,
+      "explain": "Compartilhamento reduz número de carros e emissões."
+    },
+    {
+      "id": "ma-008",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Lavagem de carro consciente:",
+      "options": [
+        "Mangueira aberta por longos períodos",
+        "Baldes e esponja, evitando desperdício",
+        "Sempre com jato de alta pressão",
+        "Sem preocupação com produtos"
+      ],
+      "answerIndex": 1,
+      "explain": "Uso responsável da água e produtos adequados reduzem impacto."
+    },
+    {
+      "id": "ma-009",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Descartar bateria automotiva:",
+      "options": [
+        "No lixo comum",
+        "Em qualquer ferro-velho",
+        "Em pontos de coleta especializados",
+        "Enterrar"
+      ],
+      "answerIndex": 2,
+      "explain": "Baterias contêm substâncias perigosas; destinação adequada é essencial."
+    },
+    {
+      "id": "ma-010",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Rotas com menos paradas e trânsito fluido:",
+      "options": [
+        "Aumentam emissões",
+        "Reduzem consumo e tempo de viagem",
+        "Não mudam nada",
+        "Só valem à noite"
+      ],
+      "answerIndex": 1,
+      "explain": "Menos paradas = menor consumo e emissões."
+    },
+    {
+      "id": "ma-011",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Pressão dos pneus abaixo do indicado:",
+      "options": [
+        "Diminui consumo",
+        "Aumenta risco e consumo",
+        "Não altera frenagem",
+        "Melhora estabilidade"
+      ],
+      "answerIndex": 1,
+      "explain": "Pneus murchos aumentam consumo e distância de frenagem."
+    },
+    {
+      "id": "ma-012",
+      "module": "ma",
+      "difficulty": 1,
+      "stem": "Combustível de boa procedência:",
+      "options": [
+        "Não interfere",
+        "Contribui para menor emissão e bom funcionamento",
+        "Só muda o preço",
+        "É proibido usar aditivado"
+      ],
+      "answerIndex": 1,
+      "explain": "Qualidade do combustível afeta emissões e durabilidade."
+    },
+    {
+      "id": "nv-001",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Luz de freio acende quando:",
+      "options": [
+        "Pisca-alerta é acionado",
+        "Pedal de freio é acionado",
+        "Ré é engatada",
+        "Farol baixo é ligado"
+      ],
+      "answerIndex": 1,
+      "explain": "Avisa veículos atrás sobre frenagem."
+    },
+    {
+      "id": "nv-002",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Marcação no pneu TWI indica:",
+      "options": [
+        "Limite de desgaste da banda de rodagem",
+        "Pressão máxima",
+        "Orientação de montagem",
+        "Tipo de borracha"
+      ],
+      "answerIndex": 0,
+      "explain": "TWI indica o limite para substituição do pneu."
+    },
+    {
+      "id": "nv-003",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Temperatura do motor elevada pede:",
+      "options": [
+        "Abrir imediatamente o radiador",
+        "Desligar o ar-condicionado e parar em local seguro",
+        "Acelerar forte",
+        "Seguir normalmente"
+      ],
+      "answerIndex": 1,
+      "explain": "Reduza carga térmica e pare para evitar danos."
+    },
+    {
+      "id": "nv-004",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Sistema ABS ajuda a:",
+      "options": [
+        "Reduzir consumo",
+        "Evitar travamento das rodas em frenagem",
+        "Aumentar potência",
+        "Melhorar aerodinâmica"
+      ],
+      "answerIndex": 1,
+      "explain": "ABS impede travamento e ajuda no controle direcional."
+    },
+    {
+      "id": "nv-005",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Nível do óleo do motor deve ser verificado:",
+      "options": [
+        "Com motor quente logo após desligar",
+        "Com motor frio e veículo nivelado",
+        "Em descida",
+        "Não é necessário"
+      ],
+      "answerIndex": 1,
+      "explain": "Condição estável dá leitura correta do nível."
+    },
+    {
+      "id": "nv-006",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Filtro de ar muito sujo:",
+      "options": [
+        "Melhora desempenho",
+        "Reduz desempenho e aumenta consumo",
+        "Não altera nada",
+        "Aumenta potência"
+      ],
+      "answerIndex": 1,
+      "explain": "Restrição de ar piora queima e consumo."
+    },
+    {
+      "id": "nv-007",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Bateria fraca costuma causar:",
+      "options": [
+        "Faróis mais fortes",
+        "Dificuldade na partida e luzes fracas",
+        "Maior torque",
+        "Funcionamento normal"
+      ],
+      "answerIndex": 1,
+      "explain": "Sinais clássicos de bateria com carga baixa."
+    },
+    {
+      "id": "nv-008",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Correia dentada/serviços dentro do prazo:",
+      "options": [
+        "São desnecessários",
+        "Previnem falhas graves do motor",
+        "Só importam em carros antigos",
+        "Aumentam poluição"
+      ],
+      "answerIndex": 1,
+      "explain": "Troca preventiva evita danos sérios."
+    },
+    {
+      "id": "nv-009",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Pressão dos pneus acima do recomendado:",
+      "options": [
+        "Melhora conforto",
+        "Reduz desgaste no centro e piora aderência",
+        "Melhora aderência sempre",
+        "É irrelevante"
+      ],
+      "answerIndex": 1,
+      "explain": "Excesso de pressão reduz área de contato útil."
+    },
+    {
+      "id": "nv-010",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Alinhamento e balanceamento:",
+      "options": [
+        "Só afetam estética",
+        "Melhoram estabilidade e reduzem desgaste irregular",
+        "São opcionais sem impacto",
+        "Pioram consumo"
+      ],
+      "answerIndex": 1,
+      "explain": "Ajustes corretos aumentam segurança e vida útil."
+    },
+    {
+      "id": "nv-011",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Líquido do limpador de para-brisa:",
+      "options": [
+        "Água com aditivo próprio",
+        "Somente água de torneira",
+        "Detergente de louça puro",
+        "Álcool combustível"
+      ],
+      "answerIndex": 0,
+      "explain": "Aditivo adequado limpa sem danificar componentes."
+    },
+    {
+      "id": "nv-012",
+      "module": "nv",
+      "difficulty": 1,
+      "stem": "Velas de ignição desgastadas tendem a:",
+      "options": [
+        "Melhorar partida",
+        "Aumentar consumo e falhas",
+        "Não interferir",
+        "Aumentar potência"
+      ],
+      "answerIndex": 1,
+      "explain": "Faísca ruim compromete combustão e eficiência."
     }
   ]
 }
