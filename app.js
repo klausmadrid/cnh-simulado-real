@@ -1,5 +1,5 @@
+// CNH Simulado Real — App JS (v0.2: seletor de quantidade + temporizador + nota de corte)
 
-// CNH Simulado Real — App JS
 const state = {
   questions: [],
   pool: [], // ids da sessão
@@ -21,16 +21,40 @@ const THEMES = [
 const SRS_KEY = "cnh_srs_v1";
 const STATS_KEY = "cnh_stats_v1";
 
-// Util
-const $ = (sel) => document.querySelector(sel);
+// ===== Util =====
+const $  = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
 const shuffle = (arr) => arr.sort(() => Math.random() - 0.5);
 const today = () => new Date().toISOString().slice(0,10);
+function loadJSON(url){ return fetch(url).then(r=>r.json()); }
 
-function loadJSON(url){
-  return fetch(url).then(r=>r.json());
+// Quantidade escolhida para o simulado (padrão 30)
+const getQuizLen = () => {
+  const sel = document.getElementById('quizLen');
+  return sel ? parseInt(sel.value, 10) : 30;
+};
+
+// ===== Timer (prova) =====
+let timerId = null;
+function startTimer(minutes = 30){
+  const end = Date.now() + minutes*60*1000;
+  const t = document.getElementById('timer');
+  clearInterval(timerId);
+  const tick = () => {
+    const left = Math.max(0, end - Date.now());
+    const mm = String(Math.floor(left/60000)).padStart(2,'0');
+    const ss = String(Math.floor((left%60000)/1000)).padStart(2,'0');
+    if (t) t.textContent = `Tempo: ${mm}:${ss}`;
+    if(left <= 0){
+      clearInterval(timerId);
+      showResults(); // encerra automaticamente ao zerar
+    }
+  };
+  tick();
+  timerId = setInterval(tick, 1000);
 }
 
+// ===== SRS & Stats =====
 function loadSRS(){
   try{ return JSON.parse(localStorage.getItem(SRS_KEY) || "{}"); } catch(e){ return {}; }
 }
@@ -41,9 +65,8 @@ function loadStats(){
 }
 function saveStats(st){ localStorage.setItem(STATS_KEY, JSON.stringify(st)); }
 
-// SRS — SM-2 simplificado
+// SM-2 simplificado
 function srsUpdate(item, wasCorrect){
-  // item = { ease, interval, reps, due }
   let ease = item.ease ?? 2.5;
   let reps = item.reps ?? 0;
   let interval = item.interval ?? 0;
@@ -72,10 +95,10 @@ function nextDue(srs){
       due.push(q.id);
     }
   }
-  return shuffle(due).slice(0, 20); // até 20 por sessão
+  return shuffle(due).slice(0, 20); // até 20 por sessão de revisão
 }
 
-// Render helpers
+// ===== Render =====
 function renderThemes(){
   const el = $("#themes");
   el.innerHTML = THEMES.map(t=>`<button class="secondary theme" data-id="${t.id}">${t.name}</button>`).join("");
@@ -116,7 +139,7 @@ function pickAnswer(q, i){
   if(i === correctIndex) st.correct += 1;
   saveStats(st);
 
-  // SRS update se modo srs
+  // SRS
   if(state.mode === "srs"){
     const srs = loadSRS();
     srs[q.id] = srsUpdate(srs[q.id] || {}, i === correctIndex);
@@ -132,10 +155,11 @@ function showCurrent(){
   renderQuestion(q);
 }
 
+// ===== Fluxos =====
 function startStudy(themeId){
   state.mode = "study";
   const pool = state.questions.filter(q => q.module === themeId).map(q=>q.id);
-  state.pool = shuffle(pool).slice(0, 20);
+  state.pool = shuffle(pool).slice(0, 20); // ajuste para usar todas: state.pool = shuffle(pool);
   state.idx = 0; state.correctCount = 0; state.answers = {};
   $("#menu").classList.add("hidden");
   $("#config").classList.add("hidden");
@@ -145,12 +169,14 @@ function startStudy(themeId){
 
 function startQuiz(){
   state.mode = "quiz";
-  state.pool = shuffle(state.questions.map(q=>q.id)).slice(0, 30);
+  const N = getQuizLen();
+  state.pool = shuffle(state.questions.map(q=>q.id)).slice(0, N);
   state.idx = 0; state.correctCount = 0; state.answers = {};
   $("#menu").classList.add("hidden");
   $("#config").classList.add("hidden");
   $("#quiz").classList.remove("hidden");
   showCurrent();
+  startTimer(30); // 30 minutos (ajuste aqui, se desejar)
 }
 
 function startSRS(){
@@ -169,10 +195,17 @@ function startSRS(){
   showCurrent();
 }
 
+// Nota de corte (em %)
+const PASS_MARK = 70;
+
 function showResults(){
   $("#quiz").classList.add("hidden");
   $("#results").classList.remove("hidden");
+  clearInterval(timerId); // para o cronômetro
+
   const pct = Math.round((state.correctCount / state.pool.length) * 100);
+  const status = pct >= PASS_MARK ? "APROVADO" : "NÃO APROVADO";
+
   const byTheme = {};
   for(const qid of Object.keys(state.answers)){
     const q = state.questions.find(x => x.id === qid);
@@ -185,7 +218,10 @@ function showResults(){
     const p = Math.round((v.ok/v.done)*100);
     return `<li>${name}: ${v.ok}/${v.done} (${p}%)</li>`;
   }).join("");
-  $("#summary").innerHTML = `<p>Acertos: <strong>${state.correctCount}/${state.pool.length}</strong> — ${pct}%</p><ul>${lines}</ul>`;
+
+  $("#summary").innerHTML = `
+    <p><strong>Resultado:</strong> ${state.correctCount}/${state.pool.length} — ${pct}% → <strong>${status}</strong> (corte: ${PASS_MARK}%)</p>
+    <ul>${lines}</ul>`;
 }
 
 function updateStats(){
@@ -198,7 +234,7 @@ function updateStats(){
   `;
 }
 
-// Events
+// ===== Eventos =====
 window.addEventListener("load", async () => {
   // PWA
   if("serviceWorker" in navigator){
@@ -237,7 +273,6 @@ window.addEventListener("load", async () => {
   $("#showAnswer").addEventListener("click", () => {
     const expl = $("#expl");
     if(expl) expl.classList.remove("hidden");
-    // Marca visualmente a correta
     $$("#qarea .option").forEach((n,idx)=>{
       if(idx === state.current.answerIndex) n.classList.add("correct");
     });
