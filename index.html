@@ -16,9 +16,21 @@
   <main>
     <section id="menu">
       <button id="btn-study">Estudar por Tema</button>
-      <button id="btn-quiz">Simulado (30 questões)</button>
+      <button id="btn-quiz">Simulado</button>
       <button id="btn-srs">Revisão (SRS)</button>
       <button id="btn-stats">Progresso</button>
+
+      <!-- Seletor de quantidade do simulado -->
+      <label class="badge" style="margin-top:8px; display:inline-block;">
+        Quantidade do simulado:
+        <select id="quizLen">
+          <option>10</option>
+          <option>20</option>
+          <option selected>30</option>
+          <option>40</option>
+          <option>60</option>
+        </select>
+      </label>
     </section>
 
     <section id="config" class="hidden">
@@ -29,6 +41,8 @@
 
     <section id="quiz" class="hidden">
       <div id="qmeta"></div>
+      <!-- Temporizador da prova -->
+      <div id="timer" class="badge"></div>
       <div id="qarea"></div>
       <div id="nav">
         <button id="prev" class="secondary">Anterior</button>
@@ -53,7 +67,7 @@
 
   <footer>
     <small>
-      Conteúdos baseados na estrutura do curso teórico de formação de condutores (Resolução CONTRAN 789/2020). 
+      Conteúdos baseados na estrutura do curso teórico de formação de condutores (Resolução CONTRAN 789/2020).
       Este app é educativo e não representa o DETRAN. Não copie questões oficiais.
     </small>
   </footer>
