@@ -1,5 +1,5 @@
-// Service Worker v3 — cache para app estático + rede-primeiro para questions.json
-const CACHE = 'cnh-simulado-v3';
+// Service Worker v6 — cache para app estático + rede-primeiro para questions.json
+const CACHE = 'cnh-simulado-v6';
 const CORE = ['./', './index.html', './styles.css', './app.js', './manifest.json', './sw.js'];
 
 self.addEventListener('install', (e) => {
