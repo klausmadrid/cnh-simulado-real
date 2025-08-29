@@ -1,210 +1,49 @@
-/* ==========================
-   CNH Simulado Real — styles.css (layout novo)
-   - Cards e botões modernos
-   - Grid 2 colunas no simulado (timer fixo no desktop)
-   - Tema por variáveis
-   ========================== */
-
-/* ---------- Tema (troque só a cor se quiser) ---------- */
+/* ============ Tema por variáveis (Claro ↔ Escuro) ============ */
 :root{
-  /* Cores base (tema azul) */
   --bg: #f7f8fb;
   --text: #0f172a;
   --muted: #64748b;
   --card: #ffffff;
   --border: #e2e8f0;
-
-  /* Cor de destaque (troque aqui) */
-  --accent: #2563eb;          /* azul */
-  /* Sugestões:
-     Verde CFC: #16a34a
-     Azul claro: #0ea5e9
-     Roxo: #7c3aed
-  */
+  --accent: #2563eb; /* cor principal */
 }
 
-/* ---------- Reset e tipografia ---------- */
+/* Quando usuário escolhe Escuro */
+html[data-theme="dark"]{
+  --bg: #0b1220;
+  --text: #e5e7eb;
+  --muted: #98a2b3;
+  --card: #0f172a;
+  --border: #1f2937;
+  --accent: #60a5fa; /* opcional: azul mais claro no dark */
+}
+
+/* ============ Reset/estrutura ============ */
 *{ box-sizing: border-box; }
-html,body{ height: 100%; }
+html,body{ height:100%; }
 body{
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
   background: var(--bg);
   color: var(--text);
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
 .hidden{ display: none !important; }
 
-/* ---------- Cabeçalho e container ---------- */
-header, main, footer{
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-header{ padding-top: 24px; padding-bottom: 8px; }
+header, main, footer{ max-width: 960px; margin: 0 auto; padding: 0 16px; }
+header{ padding: 24px 16px 8px; }
 h1{ margin: 0 0 8px; font-size: 28px; letter-spacing: -0.02em; }
 .subtitle{ margin: 0; color: var(--muted); }
 
-/* ---------- Botões ---------- */
+/* ============ Botões ============ */
 button{
-  appearance: none;
-  border: none;
-  outline: none;
-  background: var(--accent);
-  color: #fff;
-  padding: 12px 16px;
-  border-radius: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform .05s ease, box-shadow .15s ease, background .2s ease;
+  appearance: none; border: none; outline: none;
+  background: var(--accent); color:#fff;
+  padding: 12px 16px; border-radius: 12px; font-weight: 700;
+  cursor: pointer; transition: transform .05s ease, box-shadow .15s ease, background .2s;
   box-shadow: 0 2px 10px rgba(37,99,235,.20);
 }
 button:hover{ transform: translateY(-1px); }
-button:active{ transform: translateY(0); }
-button:disabled{ opacity: .5; cursor: not-allowed; }
-
-button.secondary{
-  background: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
-  box-shadow: none;
-}
-
-/* Espaçamento dos botões do menu */
+button.secondary{ background: transparent; color: var(--accent); border: 2px solid var(--accent); box-shadow:none; }
 #menu{ margin-top: 16px; }
-#menu button{ margin: 8px 8px 0 0; }
-
-/* ---------- Select (quantidade) ---------- */
-label.badge{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 12px;
-  background: #eef2ff; /* tom claro */
-  color: var(--accent);
-  padding: 8px 12px;
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 600;
-}
-#quizLen{
-  appearance: none;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 6px 10px;
-  background: #fff;
-  color: var(--text);
-  font-weight: 600;
-}
-
-/* ---------- Badges genéricas ---------- */
-.badge{
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 700;
-  background: #eef2ff;
-  color: var(--accent);
-  margin-right: 6px;
-}
-
-/* ---------- Cards ---------- */
-.card{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 1px 2px rgba(16,24,40,.04);
-}
-
-/* ---------- Estrutura do Quiz ---------- */
-#quiz{ margin-top: 16px; }
-#qmeta{ font-weight: 700; margin-bottom: 8px; }
-#timer{ margin-bottom: 8px; }
-
-#qarea .option{
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 12px;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: background .15s ease, border-color .15s ease, transform .05s ease;
-  background: #fff;
-}
-#qarea .option:hover{
-  border-color: var(--accent);
-  background: #f0f7ff;
-}
-#qarea .option.correct{
-  border-color: #16a34a;
-  background: #ecfdf5;
-}
-#qarea .option.wrong{
-  border-color: #dc2626;
-  background: #fef2f2;
-}
-.explain{ margin-top: 8px; color: var(--muted); }
-
-/* Navegação do quiz */
-#nav{ display: flex; gap: 8px; margin-top: 12px; }
-
-/* ---------- Grid: duas colunas no desktop ---------- */
-@media (min-width: 900px){
-  /* Cria uma grade 1fr | 260px para o quiz */
-  #quiz{
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    grid-template-areas:
-      "qmeta timer"
-      "qarea timer"
-      "nav   timer";
-    gap: 16px;
-    align-items: start;
-  }
-  #qmeta{ grid-area: qmeta; }
-  #qarea{ grid-area: qarea; }
-  #nav{ grid-area: nav; }
-  #timer{
-    grid-area: timer;
-    position: sticky;
-    top: 12px;
-    align-self: start;
-  }
-}
-
-/* ---------- Stats e resultados ---------- */
-#results .card, #stats .card{ margin-top: 8px; }
-
-/* ---------- Rodapé ---------- */
-footer{
-  color: var(--muted);
-  padding: 24px 16px 40px;
-}
-footer a{ color: var(--accent); font-weight: 700; text-decoration: none; }
-footer a:hover{ text-decoration: underline; }
-
-/* ---------- Acessibilidade (foco visível) ---------- */
-:focus-visible{
-  outline: 3px solid rgba(37,99,235,.55);
-  outline-offset: 2px;
-  border-radius: 10px;
-}
-
-/* ---------- Dark mode automático (opcional) ---------- */
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg: #0b1220;
-    --text: #e5e7eb;
-    --muted: #98a2b3;
-    --card: #0f172a;
-    --border: #1f2937;
-    /* --accent fica o mesmo; troque se quiser outro no dark */
-  }
-  label.badge, .badge{ background: rgba(37,99,235,.18); }
-  #qarea .option{ background: #0f172a; }
-  #qarea .option:hover{ background: #0b1a33; }
-}
+#menu b
