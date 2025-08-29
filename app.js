@@ -1,4 +1,4 @@
-// CNH Simulado Real — App JS (v0.2: seletor de quantidade + temporizador + nota de corte)
+// CNH Simulado Real — App JS (v0.3: seletor + temporizador + nota de corte + CSV)
 
 const state = {
   questions: [],
@@ -36,7 +36,7 @@ const getQuizLen = () => {
 
 // ===== Timer (prova) =====
 let timerId = null;
-function startTimer(minutes = 30){
+function startTimer(minutes = 50){ // 50 minutos (ajuste aqui, se desejar)
   const end = Date.now() + minutes*60*1000;
   const t = document.getElementById('timer');
   clearInterval(timerId);
@@ -159,7 +159,7 @@ function showCurrent(){
 function startStudy(themeId){
   state.mode = "study";
   const pool = state.questions.filter(q => q.module === themeId).map(q=>q.id);
-  state.pool = shuffle(pool).slice(0, 20); // ajuste para usar todas: state.pool = shuffle(pool);
+  state.pool = shuffle(pool).slice(0, 20); // para usar todas, troque por: state.pool = shuffle(pool);
   state.idx = 0; state.correctCount = 0; state.answers = {};
   $("#menu").classList.add("hidden");
   $("#config").classList.add("hidden");
@@ -176,7 +176,7 @@ function startQuiz(){
   $("#config").classList.add("hidden");
   $("#quiz").classList.remove("hidden");
   showCurrent();
-  startTimer(30); // 30 minutos (ajuste aqui, se desejar)
+  startTimer(50); // 50 minutos
 }
 
 function startSRS(){
@@ -234,6 +234,50 @@ function updateStats(){
   `;
 }
 
+// ===== CSV =====
+function csvEscape(s){ return `"${String(s).replace(/"/g, '""')}"`; }
+
+function downloadCSV(){
+  const rows = [];
+  rows.push([
+    "id","modulo","modulo_nome","dificuldade","enunciado",
+    "alternativa_marcada","alternativa_correta","acertou","datahora"
+  ]);
+
+  const nowIso = new Date().toISOString();
+  const toLetter = (i) => (i === "" || i === null || i === undefined) ? "" : String.fromCharCode(65 + i);
+
+  for (const qid of state.pool){
+    const q = state.questions.find(x => x.id === qid);
+    const ans = state.answers[qid];
+    const pickedIdx = ans ? ans.picked : "";
+    const correctIdx = q.answerIndex;
+
+    rows.push([
+      q.id,
+      q.module,
+      q.moduleName,
+      q.difficulty ?? "",
+      q.stem,
+      toLetter(pickedIdx),
+      toLetter(correctIdx),
+      ans ? (ans.correct ? "1" : "0") : "",
+      nowIso
+    ]);
+  }
+
+  const csv = rows.map(r => r.map(csvEscape).join(";")).join("\n");
+  const blob = new Blob([csv], {type: "text/csv;charset=utf-8;"});
+  const a = document.createElement("a");
+  const pad = (n)=> String(n).padStart(2,"0");
+  const d = new Date();
+  const fname = `resultado-simulado-${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}-${pad(d.getHours())}${pad(d.getMinutes())}.csv`;
+  a.href = URL.createObjectURL(blob);
+  a.download = fname;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
 // ===== Eventos =====
 window.addEventListener("load", async () => {
   // PWA
@@ -262,6 +306,7 @@ window.addEventListener("load", async () => {
   $("#back2").addEventListener("click", () => { $("#results").classList.add("hidden"); $("#menu").classList.remove("hidden"); });
   $("#back3").addEventListener("click", () => { $("#stats").classList.add("hidden"); $("#menu").classList.remove("hidden"); });
   $("#again").addEventListener("click", startQuiz);
+  $("#downloadCsv").addEventListener("click", downloadCSV);
 
   $("#prev").addEventListener("click", () => {
     if(state.idx>0){ state.idx--; showCurrent(); }
