@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,9 @@
 <body>
   <header>
     <h1>CNH Simulado Real</h1>
-    <p class="subtitle">Estude 15 min/dia: Legislação, Direção Defensiva, Primeiros Socorros, Meio Ambiente/Cidadania e Noções de Veículo.</p>
+    <p class="subtitle">
+      Estude 15 min/dia: Legislação, Direção Defensiva, Primeiros Socorros, Meio Ambiente/Cidadania e Noções de Veículo.
+    </p>
   </header>
 
   <main>
@@ -20,15 +22,24 @@
       <button id="btn-srs">Revisão (SRS)</button>
       <button id="btn-stats">Progresso</button>
 
-      <!-- Seletor de quantidade do simulado -->
-      <label class="badge" style="margin-top:8px; display:inline-block;">
-        Quantidade do simulado:
+      <!-- Seletor de quantidade -->
+      <label class="badge" style="margin-top:8px; display:inline-flex;">
+        Quantidade do simulado
         <select id="quizLen">
           <option>10</option>
           <option>20</option>
           <option selected>30</option>
           <option>40</option>
           <option>60</option>
+        </select>
+      </label>
+
+      <!-- Seletor de tema -->
+      <label class="badge" style="margin-top:8px; display:inline-flex;">
+        Tema
+        <select id="themeSelect">
+          <option value="light" selected>Claro</option>
+          <option value="dark">Escuro</option>
         </select>
       </label>
     </section>
@@ -41,8 +52,8 @@
 
     <section id="quiz" class="hidden">
       <div id="qmeta"></div>
-      <!-- Temporizador da prova -->
-      <div id="timer" class="badge"></div>
+      <!-- Temporizador (fica vermelho) -->
+      <div id="timer"></div>
       <div id="qarea"></div>
       <div id="nav">
         <button id="prev" class="secondary">Anterior</button>
@@ -59,20 +70,4 @@
       <button id="back2" class="secondary">Voltar ao menu</button>
     </section>
 
-    <section id="stats" class="hidden">
-      <h2>Seu progresso</h2>
-      <ul id="statsList"></ul>
-      <button id="back3" class="secondary">Voltar</button>
-    </section>
-  </main>
-
-  <footer>
-    <small>
-      Conteúdos baseados na estrutura do curso teórico de formação de condutores (Resolução CONTRAN 789/2020).
-      Este app é educativo e não representa o DETRAN. Não copie questões oficiais.
-    </small>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
-</html>
+    <section id="stats" class="hidde
